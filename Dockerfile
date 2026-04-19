@@ -37,13 +37,9 @@ RUN apt-get update \
     git \
     jq \
     openssh-client \
-    pipx \
     python3 \
     ripgrep \
     && rm -rf /var/lib/apt/lists/*
-
-# Install Hermes Agent globally
-RUN PIPX_BIN_DIR=/usr/local/bin PIPX_HOME=/opt/pipx pipx install hermes-agent
 RUN corepack enable
 
 WORKDIR /app
