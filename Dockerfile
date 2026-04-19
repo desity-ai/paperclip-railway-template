@@ -37,8 +37,13 @@ RUN apt-get update \
     git \
     jq \
     openssh-client \
+    python3 \
+    python3-pip \
     ripgrep \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Hermes Agent
+RUN pip install --no-cache-dir hermes-agent
 RUN corepack enable
 
 WORKDIR /app
